@@ -1,0 +1,6 @@
+<div>
+  {{libro | json}}
+  Nombre: <input type="text" [(ngModel)]="libro.nombre"/>
+  Edicion: <input type="text" [(ngModel)]="libro.edicion"/>
+  <button (click)="crearLibro()">Crear libro</button>
+</div>

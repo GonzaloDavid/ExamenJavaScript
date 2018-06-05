@@ -1,0 +1,13 @@
+<ngb-carousel *ngIf="listaAutores.length>0">
+  <ng-template ngbSlide *ngFor="let autor of listaAutores">
+    <img [src]="autor.imagen" alt="Random first slide">
+    <div class="carousel-caption">
+      <h3>{{autor.nombre}} {{autor.apellidos}}</h3>
+      <p>{{autor.fechaNacimiento}}</p>
+    </div>
+  </ng-template>
+</ngb-carousel>
+<div *ngIf="!(listaAutores.length>0)">
+  Cree un autor
+</div>
+

@@ -1,0 +1,29 @@
+
+<div class="container">
+<h1>EXAMEN DE JAVASCRIPT</h1>
+
+<div class="row">
+  <div class="col-6">
+    <app-carousel [listaAutores]="autores" ></app-carousel>
+  </div>
+  <div class="col-6">
+    <app-autor (autorCreado)="insertarAutor($event)"></app-autor>
+  </div>
+</div>
+<div class="row">
+    <app-listabotones [listaAutores]="autores" (autorSeleccionado)="seleccionarAutor($event)"></app-listabotones>
+</div>
+<div class="row">
+  <div class="col-6">
+    <app-libro *ngIf="autorSeleccionado" (libroCreado)="insertarLibroEnAutorSeleccionado($event)"></app-libro>
+  </div>
+  <div class="col-6">
+    <app-infoautor *ngIf="autorSeleccionado" [autor]="autorSeleccionado" ></app-infoautor>
+  </div>
+</div>
+<div class="row">
+  <app-listalibros *ngIf="autorSeleccionado" [autor]="autorSeleccionado"></app-listalibros>
+</div>
+
+
+</div>
